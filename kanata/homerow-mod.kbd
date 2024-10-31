@@ -1,0 +1,51 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defvar
+	tap-timeout   75
+	hold-timeout  250
+	tt $tap-timeout
+	ht $hold-timeout
+)
+
+(defsrc
+  grv             u i o p
+  caps a s d f    j k l ;
+  lsft
+)
+
+(defalias
+	toglon (tap-hold $tt $ht grv (layer-switch enabled))
+	toglof (tap-hold $tt $ht grv (layer-switch disabled))
+	kbch M-spc
+	lm (tap-hold $tt $ht a lmet)
+	la (tap-hold $tt $ht s lalt)
+	ls (tap-hold $tt $ht d lsft)
+	lc (tap-hold $tt $ht f lctl)
+
+	rm (tap-hold $tt $ht ; rmet)
+	ra (tap-hold $tt $ht l ralt)
+	rs (tap-hold $tt $ht k rsft)
+	rc (tap-hold $tt $ht j rctl)
+
+	mov (layer-while-held shift)
+)
+
+(deflayer disabled
+  @toglon         u i o p
+  caps a s d f    j k l ;
+  lsft
+)
+
+(deflayer enabled
+  @toglof                   u   i   o   p
+  @kbch @lm @la @ls @lc     @rc @rs @ra @rm
+  @mov
+)
+
+(deflayer shift
+  _             home pgdn pgup end
+  _ a s d f     lft down  up  rght
+  _
+)
