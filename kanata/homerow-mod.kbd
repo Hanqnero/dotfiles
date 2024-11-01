@@ -3,8 +3,8 @@
 )
 
 (defvar
-	tap-timeout   75
-	hold-timeout  250
+	tap-timeout   200
+	hold-timeout  200
 	tt $tap-timeout
 	ht $hold-timeout
 )
@@ -46,6 +46,6 @@
 
 (deflayer shift
   _             home pgdn pgup end
-  _ a s d f     lft down  up  rght
+  _ _ _ _ _     lft down  up  rght
   _
 )
