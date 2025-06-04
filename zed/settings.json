@@ -7,11 +7,13 @@
     },
     "version": "2"
   },
+
   "theme": "Catppuccin Latte",
   "ui_font_size": 14,
   "buffer_font_size": 12,
   "cursor_shape": "underline",
   "relative_line_numbers": true,
+  "icon_theme": "Catppuccin Latte",
 
   "vim_mode": true,
 
@@ -22,6 +24,12 @@
           "venvPath": "$HOME/.pyenv/"
         }
       }
+    },
+    "tinymist": {
+      "settings": {
+        "exportPdf": "never"
+      }
     }
-  }
+  },
+  "autosave": "on_focus_change"
 }

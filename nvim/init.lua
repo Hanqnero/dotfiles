@@ -9,6 +9,9 @@ vim.o.langmap =
 vim.o.keymap = 'russian-jcukenwin' -- Switch with ctrl-6 while in insert mode
 vim.o.iminsert = 0 -- disable keymap by default
 
+-- Switch keymap in normal and command modes
+vim.keymap.set({ 'i', 'c' }, '<C-/>', '<C-^>')
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -124,21 +127,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Use + and - to change wi:ndow width
 vim.keymap.set('n', '+', '<C-w>+', { desc = 'Increase window width width by 1' })
 vim.keymap.set('n', '-', '<C-w>-', { desc = 'Decrease window width width by 1' })
-
--- -- load Russian keymap and use CTRL+/ to switch layout in insert mode.
--- local keymaps = { '', 'russian-jcukenmac' }
--- local keymap_current_idx = 1
--- vim.o.keymap = keymaps[keymap_current_idx]
--- local function switch_keymap()
---   keymap_current_idx = (keymap_current_idx % #keymaps) + 1
---   vim.o.keymap = keymaps[keymap_current_idx]
---   print(keymaps[keymap_current_idx])
--- end
---
--- vim.keymap.set({ 'n', 'i' }, '<C-/>', switch_keymap, { desc = 'Toggle alternative keymap' })
-
-vim.o.keymap = 'russian-jcukenmac'
-vim.o.iminsert = 0
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
