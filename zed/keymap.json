@@ -22,7 +22,7 @@
     }
   },
   {
-    "context": "EmptyPane || vim_mode==normal || Dock ",
+    "context": "Editor && vim_mode==normal || EmptyPane || (ProjectPanel)",
     "bindings": {
       "\\": "workspace::ToggleLeftDock"
     }
